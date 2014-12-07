@@ -7,8 +7,8 @@ class MessageTest < ActiveSupport::TestCase
   end
 
   test "has a sender" do
-    adam = User.create name: "Adam"
-    steven = User.create name: "Steven"
+    adam = User.create! name: "Adam", password: "foo"
+    steven = User.create name: "Steven", password: "bar"
 
     message = adam.send_message @message_text, to: steven
     assert message.valid?
