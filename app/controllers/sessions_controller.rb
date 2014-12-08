@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
     before_filter :authenticate_user!, only: [:show, :destroy]
 
     def show
+        render json: {name: current_user.name}
     end
 
     def create
