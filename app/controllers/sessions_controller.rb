@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+    before_filter :authenticate_user!, only: [:show, :destroy]
+
     def show
     end
 
@@ -14,5 +16,7 @@ class SessionsController < ApplicationController
     end
 
     def destroy
+        logout
+        render nothing: true
     end
 end

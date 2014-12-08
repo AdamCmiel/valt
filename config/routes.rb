@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-    resources :sessions, only: [:create, :destroy, :show]
+    resources :sessions, only: [:create, :show]
 
+    delete "sessions", to: "sessions#destroy"
 
   # For reference
 
