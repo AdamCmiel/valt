@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     delete "sessions", to: "sessions#destroy"
     get    "sessions", to: "sessions#show"
 
+    resources :messages, only: [:create, :index, :show]
+
   # For reference
 
   # The priority is based upon order of creation: first created -> highest priority.
